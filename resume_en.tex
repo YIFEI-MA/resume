@@ -1,0 +1,251 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.1, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons
+%% for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you
+%% want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% \setmainfont{Lato}
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\large\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\normalsize\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, you get
+% sensible characters. But they can be changed here.
+\ifpdf
+  \input{glyphtounicode}
+  \pdfglyphtounicode{f_f}{FB00}
+  \pdfglyphtounicode{f_f_i}{FB03}
+  \pdfglyphtounicode{f_f_l}{FB04}
+  \pdfglyphtounicode{f_i}{FB01}
+  \pdfgentounicode=1
+\fi
+
+%% Use (and optionally edit) this .tex if you
+%% want to use an author-year reference style instead.
+%% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit) this .tex if you
+%% want an originally numerical reference style.
+%% \input{pubs-num.tex}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+\name{Yifei Ma}
+% \tagline{Senior Software Engineer | Autonomous Driving Middleware \& System Optimization Specialist}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{yifeima98@gmail.com}
+  \phone{+86 155 3756 0237}
+  \location{Shanghai, China}
+  %\homepage{www.homepage.com}
+  %\twitter{@twitterhandle}
+  %\linkedin{your_id}
+  \github{YIFEI-MA}
+  %\orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+	%%
+	%% For services and platforms like Mastodon where there isn't a
+	%% straightforward relation between the user ID and the hyperlink,
+	%% you can use \printinfo directly e.g.
+	% \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+	%% But if you absolutely want to create new dedicated info fields for
+	%% such platforms, then use \NewInfoField* with a star:
+	% \NewInfoField*{mastodon}{\faMastodon}
+	%% then you can use \mastodon, with TWO arguments where the 2nd argument is
+	%% the full hyperlink.
+	% \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Professional Experience}
+
+\cvevent{Software Engineer}{KargoBot (DiDi Voyager Autonomous Trucking)}{Sep 2021 -- Present}{Shanghai, China}
+
+\textbf{Middleware Development for Automated Vehicles}
+\begin{itemize}
+\item Co-architected high-availability middleware with DDS-compatible communication layer supporting hybrid networking and data replay
+\item Optimized message scheduling algorithms and memory management, reducing average end-to-end latency by $\geq$20ms and P9999 latency by $\geq$150ms
+\item Led migration of 10+ core nodes to proprietary middleware, enhancing overall system performance and reliability
+\item Developed and optimized core components including message queues and timing wheels, leveraging lock-free queues and shared memory technologies to support high-performance, high-concurrency, and real-time requirements
+\end{itemize}
+
+\textbf{Distributed Performance Monitoring Platform}
+\begin{itemize}
+\item Built distributed and comprehensive online/offline performance analytics for L4 vehicles with 30+ core metrics visualization
+\item Integrated Perfetto + eBPF + ftrace for full-stack tracing from application to kernel, improving bottleneck identification efficiency by 3x
+\item Established multi-version performance baseline comparison and automated alerting, integrating road test and simulation data into CI/CD for high-quality releases
+\end{itemize}
+
+\textbf{Sensor Driver Architecture Redesign \& Optimization}
+\begin{itemize}
+\item Implemented unified drivers supporting multiple LiDAR/Radar models with real-time health monitoring, alerting, and auto-recovery mechanisms
+\item Achieved 80\% CPU usage reduction through lock-free queues, zero-copy, and SIMD optimizations; reduced data latency by 35ms via optimized frame slicing strategy 
+\end{itemize}
+
+\textbf{High-Performance Data Compression \& Storage System}
+\begin{itemize}
+\item Developed ZSTD streaming compression-based PCAP collection system, compressing LiDAR data to 17\% of ROS bag size, significantly reducing I/O overhead
+\item Optimized image storage using HEVC encoding, achieving 40\% size reduction in All-intra mode
+\item Built compressed-format data replay simulation system enabling data closed-loop, saving \$9M annually in storage costs and supporting fleet scaling from 50 to 300+ vehicles
+\end{itemize}
+
+\textbf{Intelligent Simulation \& Testing System}
+\begin{itemize}
+\item Developed ViL/HiL hybrid simulation platform with 20+ automated evaluation metrics and local simulation visualization toolchain with fault injection capabilities
+\item Built simulation consistency validation tools and deterministic simulation framework ensuring algorithm iteration quality
+\end{itemize}
+
+\cvsection{Technical Skills}
+
+\cvtag{ROS/DDS}
+\cvtag{gRPC/Protobuf}
+\cvtag{C++}
+\cvtag{Python}
+\cvtag{eBPF/ftrace}
+\cvtag{Docker}
+\cvtag{CUDA/Parallel Computing}
+\cvtag{Distributed Systems}
+\cvtag{Qt}
+\cvtag{PyTorch}
+\cvtag{OpenCV}
+
+\switchcolumn
+
+\cvsection{Education}
+
+\cvevent{B.Sc. Computing Science (Honors)}{University of Alberta}{Sep 2017 -- Jun 2021}{Canada}
+\begin{itemize}
+\item GPA: Top 10\% (Dean's Honor Roll)
+\item Core Courses: Operating Systems, Computer Vision, Machine Learning, Natural Language Processing, Distributed Systems
+\item Projects: Video Moving Object Segmentation, MCTS-based Go AI, Android Ride-sharing App
+\end{itemize}
+
+\cvsection{Languages}
+
+\cvskill{Chinese}{5}
+\cvskill{English}{4}
+
+\cvsection{Interests}
+
+\cvtag{Photography}
+\cvtag{Go (3-dan)}
+\cvtag{Basketball}
+
+\cvsection{Key Projects}
+
+\cvevent{Low-Latency Video Streaming System}{Core Feature on E-Stop System}{Jun 2024 -- Sep 2024}{}
+\begin{itemize}
+\item Developed accelerated multi-channel 4K video processing pipeline (undistortion → stitching → RTSP streaming)
+\item Achieved low overhead (single CPU core <40\%) through CUDA zero-copy + AV1/HEVC hardware encoding
+\item Delivered real-time video transmission with GTG latency $\leq$200ms for low-bandwidth radio communication
+\end{itemize}
+
+\cvevent{Autonomous Driving Simulation Smart Agent}{Tsinghua University}{Sep 2022 -- Jun 2023}{}
+\begin{itemize}
+\item Collaborated on intelligent traffic participant system development for Virtual Sim platform
+\item Implemented hybrid multi-directional avoidance and path planning algorithms based on rule-based, social force models, and reinforcement learning
+\item Enhanced simulation scenario realism and interactivity, supporting large-scale algorithm validation and testing
+\end{itemize}
+
+% \cvsection{Professional Summary}
+
+% \begin{quote}
+% ``Experienced autonomous driving systems architect specializing in high-performance middleware development and system optimization. Proven track record in full-stack development from low-level drivers to high-level applications with complete product lifecycle experience.''
+% \end{quote}
+
+% \cvsection{Key Achievements}
+
+% \cvachievement{\faTrophy}{Cost Optimization}{\$9M annual storage cost savings}
+
+% \cvachievement{\faRocket}{Performance Boost}{80\% CPU reduction, 150ms latency optimization}
+
+% \cvachievement{\faCogs}{System Architecture}{Designed high-concurrency lock-free data processing architecture}
+
+% \cvachievement{\faChartLine}{Monitoring Platform}{Built distributed monitoring system with 30+ metrics}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+\end{paracol}
+
+\end{document}

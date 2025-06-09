@@ -1,0 +1,325 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.1, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons
+%% for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you
+%% want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+\usepackage{ctex}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% \setmainfont{Lato}
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, you get
+% sensible characters. But they can be changed here.
+\ifpdf
+  \input{glyphtounicode}
+  \pdfglyphtounicode{f_f}{FB00}
+  \pdfglyphtounicode{f_f_i}{FB03}
+  \pdfglyphtounicode{f_f_l}{FB04}
+  \pdfglyphtounicode{f_i}{FB01}
+  \pdfgentounicode=1
+\fi
+
+%% Use (and optionally edit) this .tex if you
+%% want to use an author-year reference style instead.
+%% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit) this .tex if you
+%% want an originally numerical reference style.
+%% \input{pubs-num.tex}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+\name{马逸飞}
+% \tagline{高级软件研发工程师 | 自动驾驶中间件与系统优化专家}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{yifeima98@gmail.com}
+  \phone{(86) 15537560237}
+  \location{上海, 中国}
+  %\homepage{www.homepage.com}
+  %\twitter{@twitterhandle}
+  %\linkedin{your_id}
+  \github{YIFEI-MA}
+  %\orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+	%%
+	%% For services and platforms like Mastodon where there isn't a
+	%% straightforward relation between the user ID and the hyperlink,
+	%% you can use \printinfo directly e.g.
+	% \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+	%% But if you absolutely want to create new dedicated info fields for
+	%% such platforms, then use \NewInfoField* with a star:
+	% \NewInfoField*{mastodon}{\faMastodon}
+	%% then you can use \mastodon, with TWO arguments where the 2nd argument is
+	%% the full hyperlink.
+	% \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.63}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{工作经历}
+
+\cvevent{软件研发工程师}{卡尔动力 (滴滴自动驾驶卡车业务)}{2021年9月 -- 至今}{上海}
+
+\textbf{自研通信中间件开发}
+\begin{itemize}
+\item 深度参与设计高可用中间件架构，设计兼容DDS协议的通信层，支持混合组网与数据回放
+\item 优化消息调度算法和内存管理，平均端到端延迟优化$\geq$20ms，P9999延迟降低$\geq$150ms
+\item 主导10+核心节点迁移自研中间件，提升系统整体性能和可靠性
+\item 开发优化消息队列、时间轮等核心组件，采用无锁队列和共享内存等技术，支撑节点的高性能高并发和高实时性需求
+\end{itemize}
+
+\textbf{分布式性能监控平台}
+\begin{itemize}
+\item 构建完善的在线和离线性能数据分析体系，实现30+核心指标可视化监控和分析
+\item 集成Perfetto+eBPF+ftrace实现应用内到内核全链路追踪，性能瓶颈定位效率提升3倍
+\item 建立多版本性能基线比对与自动告警机制，融合路测数据和仿真基线数据至CI/CD支撑高质量软件发布
+\end{itemize}
+
+\textbf{传感器驱动架构重构与优化}
+\begin{itemize}
+\item 实现兼容多型号LiDAR/Radar的统一驱动，并建立统一框架与实时健康监控告警系统和故障自恢复机制 
+\item 通过无锁队列+零拷贝+SIMD优化，CPU占用率降低80\%，并通过切帧优化使数据延迟降低35ms
+\end{itemize}
+
+\textbf{高性能数据压缩与存储系统}
+\begin{itemize}
+\item 开发基于ZSTD流式压缩的PCAP采集系统，激光雷达数据体积压缩至ROS bag的17\%，大幅降低IO开销
+\item 利用HEVC编码优化图像存储，All-intra下实现40\%体积减少
+\item 构建压缩格式下数据回放仿真系统实现数据闭环，综合每年节省存储成本\$900万美金，支撑L4车队规模从50台扩展至300+台
+\end{itemize}
+
+\textbf{智能仿真与测试系统}
+\begin{itemize}
+\item 开发ViL/HiL混合仿真平台功能，实现20+自动化评价指标和本地仿真可视化工具链，支持故障注入等功能
+\item 构建仿真一致性验证工具和确定性仿真框架，保障算法迭代质量
+\end{itemize}
+
+%\divider
+
+%\cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
+
+%\begin{itemize}
+%\item Joined the company as the first female hire
+%\item Developed targeted advertisement in order to use user's search queries and show them related ads
+%\end{itemize}
+
+\cvsection{技术栈}
+
+\cvtag{ROS/DDS}
+\cvtag{gRPC/Protobuf}
+% \cvtag{实时系统优化}
+\cvtag{C++}
+\cvtag{Python}
+\cvtag{CUDA/并行计算}
+\cvtag{eBPF/ftrace}
+\cvtag{Docker}
+\cvtag{分布式系统}
+\cvtag{QT}
+\cvtag{PyTorch}
+\cvtag{OpenCV}
+
+\switchcolumn
+
+\cvsection{教育背景}
+
+\cvevent{计算机科学荣誉学士学位}{阿尔伯塔大学}{2017.09 -- 2021.06}{加拿大}
+\begin{itemize}
+\item 成绩：前10\% （ Dean's Honor Roll）
+\item 核心课程：操作系统、计算机视觉、机器学习、自然语言处理、分布式系统
+\item 项目经历：视频运动物体分割，基于MCTS的围棋AI，安卓打车应用
+\end{itemize}
+
+\cvsection{语言能力}
+
+\cvskill{中文}{5}
+\cvskill{英语}{4}
+
+\cvsection{兴趣爱好}
+
+\cvtag{风光摄影}
+\cvtag{围棋（三段）}
+\cvtag{篮球}
+
+\cvsection{项目经历}
+
+\cvevent{低延迟视频推流系统}{E-Stop核心功能}{2024.06 -- 2024.09}{}
+\begin{itemize}
+\item 在Orin平台开发多路4K视频处理流水线（去畸变→拼接→RTSP推流）
+\item 通过CUDA零拷贝+NVENC（AV1/HEVC）硬编码实现低开销（CPU单核<40\%）
+\item 低带宽Radio通信场景下的实时视频传输GTG延迟$\leq$200ms
+\end{itemize}
+
+\cvevent{自动驾驶仿真Smart Agent}{清华大学车辆工程学院}{2022.09 -- 2023.06}{}
+\begin{itemize}
+\item 合作开发Virtual Sim中的智能交通参与者系统
+\item 实现基于规则、社会力模型和强化学习的混合多向避让和路径规划算法
+\item 提升仿真场景真实性和可交互性，支撑大规模算法验证与测试
+\end{itemize}
+
+%\divider
+
+%\cvevent{Bug Bounty Hunter}{Acme Corp}{Spring 2017 -- present}{Remote}
+%\begin{itemize}
+%\item Achieved over \$5,000 in bug bounties
+%\item Reported several critical vulnerabilities
+%\end{itemize}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+
+% \cvsection{技术能力矩阵}
+
+% \begin{tabular}{@{}ll@{}}
+%   \textbf{核心领域} & 中间件架构 \textbullet\ 性能优化 \textbullet\ 实时系统 \textbullet\ 仿真平台 \\
+%   \textbf{编程语言} & C++20/STL \textbullet\ Python3 \textbullet\ CUDA \textbullet\ Bash \\
+%   \textbf{系统能力} & Linux内核调优 \textbullet\ eBPF/Perfetto \textbullet\ 无锁编程 \textbullet\ DDS/ROS2 \\
+%   \textbf{工具链} & NVIDIA Jetson \textbullet\ ZSTD/HEVC \textbullet\ Docker/K8s \textbullet\ CI/CD \\
+%   \textbf{算法基础} & 多传感器融合 \textbullet\ 强化学习 \textbullet\ 分布式系统 \textbullet\ 数据压缩 \\
+% \end{tabular}
+
+% \cvsection{核心技能}
+
+% \cvskill{C++/系统编程}{5}
+% \cvskill{Python/脚本开发}{5}
+% \cvskill{CUDA/GPU编程}{4}
+% \cvskill{Linux内核/eBPF}{4}
+% \cvskill{ROS/DDS中间件}{5}
+% \cvskill{性能优化/分析}{5}
+% \cvskill{分布式系统}{4}
+% \cvskill{机器学习基础}{3}
+
+
+
+% \cvsection{教育背景}
+
+% \cvevent{计算机科学荣誉学士学位}{阿尔伯塔大学}{2017.09 -- 2021.06}{加拿大}
+% \begin{itemize}
+% \item 成绩排名：前10\%
+% \item 核心课程：操作系统、计算机视觉、机器学习、自然语言处理
+% \item 项目经历：视频运动物体分割，基于蒙特卡洛树搜索的围棋AI，安卓打车应用
+% \end{itemize}
+
+%\divider
+
+%\cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2003}{}
+
+% \cvsection{核心优势}
+
+% \begin{quote}
+% ``具备深厚的自动驾驶系统架构经验，专精于高性能中间件开发与系统优化。拥有完整的产品开发生命周期经验，从底层驱动到上层应用全栈技术能力。''
+% \end{quote}
+
+% \cvsection{技术亮点}
+
+% \cvachievement{\faTrophy}{成本优化}{年度节省存储成本\$900万美金}
+
+% \cvachievement{\faRocket}{性能提升}{CPU占用率降低80\%，延迟优化150ms}
+
+% \cvachievement{\faCogs}{系统架构}{设计高并发无锁数据处理架构}
+
+% \cvachievement{\faChartLine}{监控平台}{构建30+指标的分布式监控系统}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+% \medskip
+
+%% \cvsection{Referees}
+
+%% \cvref{name}{email}{mailing address}
+%% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+%% {Address Line 1\\Address line 2}
+
+%% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+%% {Address Line 1\\Address line 2}
+
+\end{paracol}
+
+
+\end{document}
